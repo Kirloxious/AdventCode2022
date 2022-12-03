@@ -11,16 +11,13 @@ import java.util.Scanner;
 public class CalorieCounting {
 
 
-
-
-  // reads a csv file of 3D points
   public static List<Integer> read(String filename) {
 	  
     List<Integer> calorieMap = new ArrayList<>();
     int calorieTotal = 0;
 
 	try (Scanner sc = new Scanner(new File(filename))) {
-        // read points
+
         while (sc.hasNextLine())  
         {  
             String input = sc.nextLine();
