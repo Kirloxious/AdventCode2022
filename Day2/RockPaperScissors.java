@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -34,31 +32,31 @@ public class RockPaperScissors {
 
         //Opponent Rock
         if(opponentMove.equals("A")){
-            //Player Rock, Draw
+            //Player must lose
             if(playerMove.equals("X")){
+                roundScore += LOST_SCORE + SCISSORS_SCORE;
+            }
+            //Player must draw
+            else if(playerMove.equals("Y")){
                 roundScore += DRAW_SCORE + ROCK_SCORE;
             }
-            //Player Paper, Win
-            else if(playerMove.equals("Y")){
-                roundScore += WIN_SCORE + PAPER_SCORE;
-            }
-            //Player Scissor, Lost
+            //Player must win
             else if(playerMove.equals("Z")){
-                roundScore += LOST_SCORE + SCISSORS_SCORE;
+                roundScore += WIN_SCORE + PAPER_SCORE;
             }
         }
 
         //Opponent Paper
         else if(opponentMove.equals("B")){
-            //Player Rock, Lost
+            //Player must lose
             if(playerMove.equals("X")){
                 roundScore += LOST_SCORE + ROCK_SCORE;
             }
-            //Player Paper, Draw
+            //Player must draw
             else if(playerMove.equals("Y")){
                 roundScore += DRAW_SCORE + PAPER_SCORE;
             }
-            //Player Scissor, Win
+            //Player must win
             else if(playerMove.equals("Z")){
                 roundScore += WIN_SCORE + SCISSORS_SCORE;
             }
@@ -66,17 +64,17 @@ public class RockPaperScissors {
 
         //Opponent Scissors
         else if(opponentMove.equals("C")){
-            //Player Rock, Win
+            //Player must lose
             if(playerMove.equals("X")){
-                roundScore += WIN_SCORE + ROCK_SCORE;
-            }
-            //Player Paper, lost
-            else if(playerMove.equals("Y")){
                 roundScore += LOST_SCORE + PAPER_SCORE;
             }
-            //Player Scissor, Draw
-            else if(playerMove.equals("Z")){
+            //Player must draw
+            else if(playerMove.equals("Y")){
                 roundScore += DRAW_SCORE + SCISSORS_SCORE;
+            }
+            //Player must win
+            else if(playerMove.equals("Z")){
+                roundScore += WIN_SCORE + ROCK_SCORE;
             }
         }
 
