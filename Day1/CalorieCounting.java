@@ -49,6 +49,7 @@ public class CalorieCounting {
             total += max;
         }
 
+        System.out.println(Collections.max(calorieMap));
         System.out.println(total);
     }
 
